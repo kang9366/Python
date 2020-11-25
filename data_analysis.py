@@ -14,3 +14,7 @@ print(array4)
 array_np = np.array([1, 2, 3, 4])
 array_reshape = array_np.reshape((2, 2))
 print(array_reshape)
+
+#등차 수열 만들기 (start : 시작지점, stop : 끝지점, num = 만들 원소의 개수, endpoint : 끝지점을 포함할지의 여부, retstep : 간격을 리턴할지의 여부)
+array_5 = np.linspace(start=0, stop=50, num=10, endpoint=True, retstep=True)
+print(array_5)
