@@ -1,24 +1,27 @@
-#ㄱ - 합 반환함수 def sum1(arr): sum = 0
-for i in arr:
-    sum += i 
+#ㄱ - 합 반환함수 
+def sum1(arr): 
+    sum = 0
+    for i in arr:
+        sum += i 
     return sum
 
 #ㄴ - 제곱합 반환함수
 def sum2(arr): 
     sum = 0
-i = 0 
-while(True):
-    sum += arr[i]*arr[i] i += 1
-    if i == len(arr): 
-        break
+    i = 0 
+    while(True):
+        sum += arr[i]*arr[i] 
+        i += 1
+        if i == len(arr): 
+            break
     return sum
 
 #ㄷ - 짝수,홀수 판별함수
 def isodd(num):
-if num % 2 != 0: 
-    return True
-else:
-    return False
+    if num % 2 != 0: 
+        return True
+    else:
+        return False
 
 #ㄹ-x1
 x1 = []
