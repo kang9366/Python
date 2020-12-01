@@ -14,13 +14,12 @@ ax.set_xlim(xrange)
 ax.set_ylim(yrange)
 ax.set_zlim(zrange)
 
-# points a, b and, c
-a1, a2, a3, a4, a5 = (0,0,5), (3,0,5), (3,3,5), (0,3,5), (0,0,5)
-b1, b2, b3, b4, b5 = (0,0,2), (3,0,2), (3,3,2), (0,3,2), (0,0,2)
-c1, c2, c3, c4, c5 = (0,0,2), (3,0,2), (3,0,5), (0,0,5), (0,0,2)
-d1, d2, d3, d4, d5 = (0,3,2), (3,3,2), (3,3,5), (0,3,5), (0,3,2)
-
 # head
+a1, a2, a3, a4, a5 = (0,0,7), (3,0,7), (3,3,7), (0,3,7), (0,0,7)
+b1, b2, b3, b4, b5 = (0,0,2), (3,0,2), (3,3,2), (0,3,2), (0,0,2)
+c1, c2, c3, c4, c5 = (0,0,2), (3,0,2), (3,0,7), (0,0,7), (0,0,2)
+d1, d2, d3, d4, d5 = (0,3,2), (3,3,2), (3,3,7), (0,3,7), (0,3,2)
+
 A = np.array([a1, a2, a3, a4, a5])
 Anew=np.zeros((A.shape[0],A.shape[1]+1))
 AT=np.zeros((A.shape[0],A.shape[1]))
@@ -368,5 +367,123 @@ ax.plot(A[:,0], A[:,1], A[:,2], color='k', alpha=0.6)
 ax.plot(B[:,0], B[:,1], B[:,2], color='k', alpha=0.6)
 ax.plot(C[:,0], C[:,1], C[:,2], color='k', alpha=0.6)
 ax.plot(D[:,0], D[:,1], D[:,2], color='k', alpha=0.6)
+
+#bar1
+a1, a2, a3, a4, a5 = (-4,1,-6), (-2,1,-6), (-2,2,-6), (-4,2,-6), (-4,1,-6)
+b1, b2, b3, b4, b5 = (-4,1,-7), (-2,1,-7), (-2,2,-7), (-4,2,-7), (-4,1,-7)
+c1, c2, c3, c4, c5 = (-4,1,-7), (-2,1,-7), (-2,1,-6), (-4,1,-6), (-4,1,-7)
+d1, d2, d3, d4, d5 = (-4,2,-7), (-2,2,-7), (-2,2,-6), (-4,2,-6), (-4,2,-7)
+
+A = np.array([a1, a2, a3, a4, a5])
+Anew=np.zeros((A.shape[0],A.shape[1]+1))
+AT=np.zeros((A.shape[0],A.shape[1]))
+Ac=np.ones((1,A.shape[0]))
+Anew[:,:-1]=A
+Anew[:,-1]=Ac
+
+B = np.array([b1, b2, b3, b4, b5])
+Bnew=np.zeros((B.shape[0],B.shape[1]+1))
+BT=np.zeros((B.shape[0],B.shape[1]))
+Bc=np.ones((1,B.shape[0]))
+Bnew[:,:-1]=B
+Bnew[:,-1]=Bc
+
+C = np.array([c1, c2, c3, c4, c5])
+Cnew=np.zeros((C.shape[0],C.shape[1]+1))
+CT=np.zeros((C.shape[0],C.shape[1]))
+Cc=np.ones((1,C.shape[0]))
+Cnew[:,:-1]=C
+Cnew[:,-1]=Cc
+
+D = np.array([d1, d2, d3, d4, d5])
+Dnew=np.zeros((D.shape[0],D.shape[1]+1))
+DT=np.zeros((D.shape[0],D.shape[1]))
+Dc=np.ones((1,D.shape[0]))
+Dnew[:,:-1]=D
+Dnew[:,-1]=Dc
+
+ax.plot(A[:,0], A[:,1], A[:,2], color='k', alpha=0.6)
+ax.plot(B[:,0], B[:,1], B[:,2], color='k', alpha=0.6)
+ax.plot(C[:,0], C[:,1], C[:,2], color='k', alpha=0.6)
+ax.plot(D[:,0], D[:,1], D[:,2], color='k', alpha=0.6)
+
+#bar2
+a1, a2, a3, a4, a5 = (-5,-2,-6), (-4,-2,-6), (-4,5,-6), (-5,5,-6), (-5,-2,-6)
+b1, b2, b3, b4, b5 = (-5,-2,-7), (-4,-2,-7), (-4,5,-7), (-5,5,-7), (-5,-2,-7)
+c1, c2, c3, c4, c5 = (-5,-2,-7), (-4,-2,-7), (-4,-2,-6), (-5,-2,-6), (-5,-2,-7)
+d1, d2, d3, d4, d5 = (-5,5,-7), (-4,5,-7), (-4,5,-6), (-5,5,-6), (-5,5,-7)
+
+A = np.array([a1, a2, a3, a4, a5])
+Anew=np.zeros((A.shape[0],A.shape[1]+1))
+AT=np.zeros((A.shape[0],A.shape[1]))
+Ac=np.ones((1,A.shape[0]))
+Anew[:,:-1]=A
+Anew[:,-1]=Ac
+
+B = np.array([b1, b2, b3, b4, b5])
+Bnew=np.zeros((B.shape[0],B.shape[1]+1))
+BT=np.zeros((B.shape[0],B.shape[1]))
+Bc=np.ones((1,B.shape[0]))
+Bnew[:,:-1]=B
+Bnew[:,-1]=Bc
+
+C = np.array([c1, c2, c3, c4, c5])
+Cnew=np.zeros((C.shape[0],C.shape[1]+1))
+CT=np.zeros((C.shape[0],C.shape[1]))
+Cc=np.ones((1,C.shape[0]))
+Cnew[:,:-1]=C
+Cnew[:,-1]=Cc
+
+D = np.array([d1, d2, d3, d4, d5])
+Dnew=np.zeros((D.shape[0],D.shape[1]+1))
+DT=np.zeros((D.shape[0],D.shape[1]))
+Dc=np.ones((1,D.shape[0]))
+Dnew[:,:-1]=D
+Dnew[:,-1]=Dc
+
+ax.plot(A[:,0], A[:,1], A[:,2], color='k', alpha=0.6)
+ax.plot(B[:,0], B[:,1], B[:,2], color='k', alpha=0.6)
+ax.plot(C[:,0], C[:,1], C[:,2], color='k', alpha=0.6)
+ax.plot(D[:,0], D[:,1], D[:,2], color='k', alpha=0.6)
+
+#bar3
+a1, a2, a3, a4, a5 = (-5,1,-3), (-4,1,-3), (-4,2,-3), (-5,2,-3), (-5,1,-3)
+b1, b2, b3, b4, b5 = (-5,1,-10), (-4,1,-10), (-4,2,-10), (-5,2,-10), (-5,1,-10)
+c1, c2, c3, c4, c5 = (-5,1,-10), (-4,1,-10), (-4,1,-3), (-5,1,-3), (-5,1,-10)
+d1, d2, d3, d4, d5 = (-5,2,-10), (-4,2,-10), (-4,2,-3), (-5,2,-3), (-5,2,-10)
+
+A = np.array([a1, a2, a3, a4, a5])
+Anew=np.zeros((A.shape[0],A.shape[1]+1))
+AT=np.zeros((A.shape[0],A.shape[1]))
+Ac=np.ones((1,A.shape[0]))
+Anew[:,:-1]=A
+Anew[:,-1]=Ac
+
+B = np.array([b1, b2, b3, b4, b5])
+Bnew=np.zeros((B.shape[0],B.shape[1]+1))
+BT=np.zeros((B.shape[0],B.shape[1]))
+Bc=np.ones((1,B.shape[0]))
+Bnew[:,:-1]=B
+Bnew[:,-1]=Bc
+
+C = np.array([c1, c2, c3, c4, c5])
+Cnew=np.zeros((C.shape[0],C.shape[1]+1))
+CT=np.zeros((C.shape[0],C.shape[1]))
+Cc=np.ones((1,C.shape[0]))
+Cnew[:,:-1]=C
+Cnew[:,-1]=Cc
+
+D = np.array([d1, d2, d3, d4, d5])
+Dnew=np.zeros((D.shape[0],D.shape[1]+1))
+DT=np.zeros((D.shape[0],D.shape[1]))
+Dc=np.ones((1,D.shape[0]))
+Dnew[:,:-1]=D
+Dnew[:,-1]=Dc
+
+ax.plot(A[:,0], A[:,1], A[:,2], color='k', alpha=0.6)
+ax.plot(B[:,0], B[:,1], B[:,2], color='k', alpha=0.6)
+ax.plot(C[:,0], C[:,1], C[:,2], color='k', alpha=0.6)
+ax.plot(D[:,0], D[:,1], D[:,2], color='k', alpha=0.6)
+
 
 plt.show()
