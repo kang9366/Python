@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -8,9 +7,9 @@ import turtle as t
 # 3D figure 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d') # Axe3D object
-xrange=[-7, 7]
-yrange=[-7, 7]
-zrange=[-7, 7]
+xrange=[-25, 25]
+yrange=[-25, 25]
+zrange=[-25, 25]
 ax.set_xlim(xrange)
 ax.set_ylim(yrange)
 ax.set_zlim(zrange)

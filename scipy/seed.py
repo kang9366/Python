@@ -7,9 +7,9 @@ import turtle as t
 # 3D figure 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d') # Axe3D object
-xrange=[-7, 7]
-yrange=[-7, 7]
-zrange=[-7, 7]
+xrange=[-5, 5]
+yrange=[-5, 5]
+zrange=[-5, 5]
 ax.set_xlim(xrange)
 ax.set_ylim(yrange)
 ax.set_zlim(zrange)
@@ -56,27 +56,30 @@ ax.plot(D[:,0], D[:,1], D[:,2], color='k', alpha=0.6, marker='o')
 
 
 # scaling transformation matrix
-sx=1/2
-sy=1/3
-sz=1
-T_s = np.array([[sx, 0, 0, 0], [0, sy, 0, 0], [0, 0, sz, 0], [0, 0, 0, 1]])
+b= -1
+c= 1
+d= -1
+f= 1
+g= 1
+i= 1
+T_sh = np.array([[1, d, g, 0], [b, 1, i, 0], [c, f, 1, 0], [0, 0, 0, 1]])
 
-AT_s = T_s @ Anew.T
-AT=AT_s[:-1,:].T
+AT_sh = T_sh @ Anew.T
+ATsh=AT_sh[:-1,:].T
 
-BT_s = T_s @ Bnew.T
-BT=BT_s[:-1,:].T
+BT_sh = T_sh @ Bnew.T
+BTsh=BT_sh[:-1,:].T
 
-CT_s = T_s @ Cnew.T
-CT=CT_s[:-1,:].T
+CT_sh = T_sh @ Cnew.T
+CTsh=CT_sh[:-1,:].T
 
-DT_s = T_s @ Dnew.T
-DT=DT_s[:-1,:].T
+DT_sh = T_sh @ Dnew.T
+DTsh=DT_sh[:-1,:].T
+
+ax.plot(ATsh[:,0], ATsh[:,1], ATsh[:,2], color='c',alpha=0.6, marker='o')
+ax.plot(BTsh[:,0], BTsh[:,1], BTsh[:,2], color='c',alpha=0.6, marker='o')
+ax.plot(CTsh[:,0], CTsh[:,1], CTsh[:,2], color='c',alpha=0.6, marker='o')
+ax.plot(DTsh[:,0], DTsh[:,1], DTsh[:,2], color='c',alpha=0.6, marker='o')
 
 
-ax.plot(AT[:,0], AT[:,1], AT[:,2], color='r',alpha=0.6, marker='o')
-ax.plot(BT[:,0], BT[:,1], BT[:,2], color='r',alpha=0.6, marker='o')
-ax.plot(CT[:,0], CT[:,1], CT[:,2], color='r',alpha=0.6, marker='o')
-ax.plot(DT[:,0], DT[:,1], DT[:,2], color='r',alpha=0.6, marker='o')
-
-plt.plot()
+plt.show()
