@@ -1,58 +1,71 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import string
+import matplotlib.pyplot as plt
 
-# points a, b and c
-a, b, c, d = (0,0,0), (0,1,1), (1,1,1), (1,0,1)
+x1 = np.linspace(5, 10)
+x2 = np.linspace(10, 20)
+x3 = np.linspace(20, 25)
 
-# matrix with row vectors of points
-A = np.array([a, b, c, d])
-theta = np.pi/5
-cs = np.cos(theta)
-ss = np.sin(theta)
-sh = 2
-tx = 3
-ty = 5 
-I = np.eye(3)
-T_s = np.array([[2,0,0], [0,2,0], [0,0,1]])
-T_r = np.array([[cs,ss,0], [-ss,cs,0], [0,0,1]])
-T_tl = np.array([[1,0,tx], [0,1,ty], [0,0,1]])
-T_shh = np.array([[1,sh,0], [0,1,0], [0,0,1]])
-T_shv = np.array([[1,0,0], [sh,1,0], [0,0,1]])
+l1 = 0.5*(x1**2)
+l2 = 0.05*(x2**3) - x2**2 + 15*x2 - 50
+l3 = 0.0025*(x3**4) - 0.15*(x3**3) + 135*x3 - 1650
 
-color_lut = 'rgbc'
-fig = plt.figure()
-ax = plt.gca()
-xs = []
-ys = []
-xs_s = []
-ys_s = []
+v1 = x1
+v2 = 0.15*(x2**2) - 2*x2 +15
+v3 = 0.01*(x3**3) - 0.45*(x3**2) + 135
 
-ci = 0
-for row in A:
-    output_row = T_r @ row
-    print(output_row)
-    x, y, i = row
-    x_s, y_s, i_s = output_row
-    xs_s.append(x_s)
-    ys_s.append(y_s)
-    xs.append(x)
-    ys.append(y)
-    i, i_s = int(i), int(i_s)
-    c, c_s = color_lut[i], color_lut[i_s]
-    plt.scatter(x, y, color = c)
-    plt.scatter(x_s, y_s, color = c_s)
-    plt.text(x+0.15, y, f"{string.ascii_letters[int(i_s)]}")
-    plt.text(x_s+0.15, y_s, f"{string.ascii_letters[int(i_s)]}")
-    ci+=1
+a1 = x1/x1
+a2 = 0.3*x2 - 2
+a3 = 0.03*(x3**2) - 0.9*x3
 
-xs.append(xs[0])
-ys.append(ys[0])
-xs_s.append(xs_s[0])
-ys_s.append(ys_s[0])
+def l(t):
+    if 0<=t and t<=10:
+        return 0.5*t*t
+    elif 10<=t and t<=20:
+        return 0.05*(t**3) - t**2 + 15*t - 50
+    else:
+        return 0.0025*(t**4) - 0.15*(t**3) + 135*t - 1650
 
-plt.plot(xs, ys, color = "gray", linestyle = "dotted")
-ax.set_xticks(np.arange(-2.5, 3, 0.5))
-ax.set_yticks(np.arange(-2.5, 3, 0.5))
-plt.grid()
+def v(t):
+    if 0<=t and t<=10:
+        return t
+    elif 10<=t and t<=20:
+        return 0.15*(t**2) - 2*t +15
+    else:
+        return 0.01*(t**3) - 0.45*(t**2) + 135
+
+def a(t):
+    if 0<=t and t<=10:
+        return t/t
+    elif 10<=t and t<=20:
+        return 0.3*t - 2
+    else:
+        return 0.03*(t**2) - 0.9*t
+
+print("----------위치----------")
+for i in np.arange(5, 25, 0.3):
+    num = round(float(i), 1)
+    print(l(num))
+
+print("\n----------속도----------")
+for i in np.arange(5, 25, 0.3):
+    num = round(float(i), 1)
+    print(v(num))
+
+print("\n----------가속도----------")
+for i in np.arange(5, 25, 0.3):
+    num = round(float(i), 1)
+    print(a(num))
+
+plt.plot(x1, l1, 'g')
+plt.plot(x2, l2, 'g')
+plt.plot(x3, l3, 'g')
+
+plt.plot(x1, v1, 'k')
+plt.plot(x2, v2, 'k')
+plt.plot(x3, v3, 'k')
+
+plt.plot(x1, a1, 'r')
+plt.plot(x2, a2, 'r')
+plt.plot(x3, a3, 'r')
+
 plt.show()

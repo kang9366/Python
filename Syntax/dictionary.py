@@ -7,5 +7,5 @@ c_code = {'Korea':82, 'US':11, 'Germany' : 81}
 print(c_code.keys())
 
 
-A = np.array([1,2,3], [4,5,6])
+A = np.array([[1,2,3], [4,5,6]])
 print(A)
